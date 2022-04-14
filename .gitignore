@@ -4,3 +4,8 @@ cache/*
 output/*
 data/*
 predictions/*
+data-preprocess/
+degree-env/
+env/
+train-env/
+

@@ -1,4 +1,10 @@
-# DEGREE: A Data-Efficient Generation-Based Event Extraction Model
+# This is a forked repo of DEGREE: A Data-Efficient Generation-Based Event Extraction Model. Commit:[5707ef8](https://github.com/PlusLabNLP/DEGREE/commit/5707ef855741b244d8f9836b3d598a470e6339f7)
+```shell
+chmod a+x setup_degree.sh
+./setup_degree.sh
+```
+
+# Following content is from the README of the original paper's repo.
 
 Code for our NAACL-2022 paper [DEGREE: A Data-Efficient Generation-Based Event Extraction Model](https://arxiv.org/abs/2108.12724).
 

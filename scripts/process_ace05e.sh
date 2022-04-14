@@ -1,14 +1,14 @@
-export DYGIEFORMAT_PATH="./processed_data/ace05e_dygieppformat"
-export OUTPUT_PATH="./processed_data/ace05e_bart"
+export DYGIEFORMAT_PATH="$ROOT_DIR/processed_data/ace05e_dygieppformat"
+export OUTPUT_PATH="$ROOT_DIR/processed_data/ace05e_bart"
 
-mkdir $OUTPUT_PATH
+mkdir -p $OUTPUT_PATH
 
 python preprocessing/process_ace05e.py -i $DYGIEFORMAT_PATH/train.json -o $OUTPUT_PATH/train.w1.oneie.json -b facebook/bart-large -w 1
 python preprocessing/process_ace05e.py -i $DYGIEFORMAT_PATH/dev.json -o $OUTPUT_PATH/dev.w1.oneie.json -b facebook/bart-large -w 1
 python preprocessing/process_ace05e.py -i $DYGIEFORMAT_PATH/test.json -o $OUTPUT_PATH/test.w1.oneie.json -b facebook/bart-large -w 1
 
-export BASE_PATH="./processed_data/"
-export SPLIT_PATH="./resource/low_resource_split/ace05e"
+export BASE_PATH="$ROOT_DIR/processed_data/"
+export SPLIT_PATH="$ROOT_DIR/resource/low_resource_split/ace05e"
 
 python preprocessing/split_dataset.py -i $BASE_PATH/ace05e_bart/train.w1.oneie.json -s $SPLIT_PATH/doc_list_001 -o $BASE_PATH/ace05e_bart/train.001.w1.oneie.json
 python preprocessing/split_dataset.py -i $BASE_PATH/ace05e_bart/train.w1.oneie.json -s $SPLIT_PATH/doc_list_002 -o $BASE_PATH/ace05e_bart/train.002.w1.oneie.json
